@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="init" default-destroy-method="destroy">
+
+	<bean id = "bookService" class = "cs544.exercise11_3.BookService">
+		<property name="suppliers">
+		
+			<list value-type = "cs544.exercise11_3.IBookService">
+				<bean id = "amazon" class = "cs544.exercise11_3.Amazon"/>
+				<bean id = "ebooks" class = "cs544.exercise11_3.EBooks"/>
+				<bean id = "BarnesAndNoble" class = "cs544.exercise11_3.BarnesAndNoble"/>
+				<bean id = "borders" class = "cs544.exercise11_3.Borders" />
+			</list>
+			
+		</property>
+	</bean>
+</beans>
